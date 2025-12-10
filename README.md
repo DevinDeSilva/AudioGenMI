@@ -19,11 +19,11 @@ Our framework consists of two main stages:
 2.  **Inversion Attack:** Freezing the generator and optimizing the latent vector $z$ to minimize the identity loss of the target speaker in the victim model (SincNet).
 
 ### Attack Pipeline
-![System Diagram](images/audioMIV2.png)
+![System Diagram](Docs/img/audioMIV2.png)
 *Figure 1: The proposed Generative Audio Inversion attack pipeline.*
 
 ### GAN Training
-![Training Diagram](images/AudioMI-ModelTrainingV2.png)
+![Training Diagram](Docs/img/AudioMI-ModelTrainingV2.png)
 *Figure 2: The GAN training procedure using auxiliary public data.*
 
 ## 🛠️ Installation
