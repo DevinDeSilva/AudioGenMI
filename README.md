@@ -27,7 +27,7 @@ NEPTUNE_API_TOKEN="example-api-key"
 NEPTUNE_PROJECT="example-project-name"
 ```
 
-### 2. Download Data to `data` folder (Please note this is close to 40 GB)
+### 2. Download Data to `data` folder (Please note this is close to 50 GB)
 ```bash
 # Move to the data folder
 cd data
