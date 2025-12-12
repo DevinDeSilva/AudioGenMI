@@ -10,6 +10,44 @@
 1. [Report](Report/AudioMI_G3_Report.pdf)
 2. [Inverted Samples and Model Saves](https://drive.google.com/drive/folders/1uxwEYjZH9Es582MMqcqQ0vGjquZzJXBX?usp=drive_link)
 
+## Setup
+
+### 1. Setup Enviroment and add [neptune api-key](https://docs.neptune.ai/api_token/) to a .env file (example is given in [.env.example](.env.example))
+```bash
+# Clone the repository
+https://github.com/DevinDeSilva/AudioGenMI_G3_deliverables.git
+cd AudioGenMI
+
+# Install dependencies
+pip install -r requirements.txt
+```
+#### Setup .env
+
+### 2. Download Data to `data` folder
+```bash
+# Clone the repository
+https://github.com/DevinDeSilva/AudioGenMI_G3_deliverables.git
+cd AudioGenMI
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 3. Run Data-preprocessing. This contains the part where the datasets are 
+
+### 3. Download and extract the pretrained models available in the drive link to `models/` folder (Contains all the models I trained + pretrainining weights of hifigan originally available in [here](https://github.com/jik876/hifi-gan))
+
+### 4. train main speaker recognition model and evaluation models
+
+### 5. Train GAI model
+
+### 6. Run Model Inversion baseline methods.
+
+### 7. Run Model Inversion our method.
+
+### 8. Run evaluation.
+
+
 ## 📝 Abstract
 
 This repository hosts the code for the paper **Generative Audio Inversion (GAI)**. We introduce a novel framework that adapts Generative Model Inversion (GMI) to the acoustic domain to reconstruct high-fidelity speaker representations from a target Speaker Recognition System (specifically SincNet).
@@ -36,12 +74,3 @@ Our framework consists of two main stages:
 * Linux or macOS
 * Python 3.8+
 * NVIDIA GPU + CUDA
-
-### Setup
-```bash
-# Clone the repository
-git clone https://github.com/DevinDeSilva/AudioGenMI.git
-cd AudioGenMI
-
-# Install dependencies
-pip install -r requirements.txt
