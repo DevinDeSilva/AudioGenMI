@@ -16,34 +16,39 @@
 ```bash
 # Clone the repository
 https://github.com/DevinDeSilva/AudioGenMI_G3_deliverables.git
-cd AudioGenMI
+cd AudioGenMI_G3_deliverables
 
 # Install dependencies
 pip install -r requirements.txt
 ```
 #### Setup .env
-
-### 2. Download Data to `data` folder
 ```bash
-# Clone the repository
-https://github.com/DevinDeSilva/AudioGenMI_G3_deliverables.git
-cd AudioGenMI
-
-# Install dependencies
-pip install -r requirements.txt
+NEPTUNE_API_TOKEN="example-api-key"
+NEPTUNE_PROJECT="example-project-name"
 ```
+
+### 2. Download Data to `data` folder (Please note this is close to 40 GB)
+```bash
+# Move to the data folder
+cd data
+
+# run download_data.sh
+source download_data.sh
+```
+
+
 
 ### 3. Run Data-preprocessing. This contains the part where the datasets are 
 
-### 3. Download and extract the pretrained models available in the drive link to `models/` folder (Contains all the models I trained + pretrainining weights of hifigan originally available in [here](https://github.com/jik876/hifi-gan))
+### 3. Download and extract the pretrained models available in the gdrive link available in Resources section to `models/` folder (Contains all the models I trained + pretrainining weights of hifigan originally available in [here](https://github.com/jik876/hifi-gan))
 
-### 4. train main speaker recognition model and evaluation models
+### 4. train main speaker recognition model and evaluation models (optional since step 3 downlods my pretrains)
 
-### 5. Train GAI model
+### 5. Train GAI model (optional since step 3 downlods my pretrains)
 
-### 6. Run Model Inversion baseline methods.
+### 6. Run Model Inversion baseline methods (I have added the inverted samples I generated in the gdrive link available in Resources section).
 
-### 7. Run Model Inversion our method.
+### 7. Run Model Inversion our method (I have added the inverted samples I generated in the gdrive link available in Resources section).
 
 ### 8. Run evaluation.
 
