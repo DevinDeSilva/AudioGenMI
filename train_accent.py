@@ -41,11 +41,11 @@ import torch.nn as nn
 from typing import Tuple, List
 from tqdm import tqdm
 import sys
-sys.path.append("/home/desild/work/academic/sem3/TrustworthyML-assignment/tacotron2")
-print(sys.path)
+# sys.path.append("/home/desild/work/academic/sem3/TrustworthyML-assignment/tacotron2")
+# print(sys.path)
 
 # Load Configs
-load_dotenv("/home/desild/work/academic/sem3/TrustworthyML-assignment/.env")
+load_dotenv()
 cuda = True if torch.cuda.is_available() else False
 
 run = neptune.init_run(
@@ -1006,8 +1006,8 @@ def get_text_embedding(text, model):
 
 # %%
 
-val_data = pd.read_csv("/home/desild/work/academic/sem3/TrustworthyML-assignment/data/raw/vctk/val_data_top.csv")
-train_data = pd.read_csv("/home/desild/work/academic/sem3/TrustworthyML-assignment/data/raw/vctk/train_data_top.csv")
+val_data = pd.read_csv("data/vctk_dataset/val_data_top.csv")
+train_data = pd.read_csv("data/vctk_dataset/train_data_top.csv")
 
 SPEAKER_TO_ID = {k:v for v,k in enumerate(sorted(train_data['ACCENTS'].unique()))}
 

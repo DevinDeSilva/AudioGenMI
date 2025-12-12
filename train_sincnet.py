@@ -41,11 +41,11 @@ import torch.nn as nn
 from typing import Tuple, List
 from tqdm import tqdm
 import sys
-sys.path.append("/home/desild/work/academic/sem3/TrustworthyML-assignment/tacotron2")
-print(sys.path)
+# sys.path.append(".")
+# print(sys.path)
 
 # Load Configs
-load_dotenv("/home/desild/work/academic/sem3/TrustworthyML-assignment/.env")
+load_dotenv()
 cuda = True if torch.cuda.is_available() else False
 
 run = neptune.init_run(
@@ -856,7 +856,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 opt = dycomutils.config.ConfigDict(opt)
 
 # %%
-ROOT_FOL = '../..'
+# ROOT_FOL = '../..'
 
 # config.training_files = os.path.join(ROOT_FOL, 'PREPROCESSED_TIMIT', config.training_files)
 # config.validation_files = os.path.join(ROOT_FOL, 'PREPROCESSED_TIMIT', config.validation_files)
@@ -1006,8 +1006,8 @@ def get_text_embedding(text, model):
 
 # %%
 
-val_data = pd.read_csv("/home/desild/work/academic/sem3/TrustworthyML-assignment/data/raw/vctk/val_data_top.csv")
-train_data = pd.read_csv("/home/desild/work/academic/sem3/TrustworthyML-assignment/data/raw/vctk/train_data_top.csv")
+val_data = pd.read_csv("data/vctk_dataset/val_data_top.csv")
+train_data = pd.read_csv("data/vctk_dataset/train_data_top.csv")
 
 SPEAKER_TO_ID = {k:v for v,k in enumerate(sorted(train_data['speaker_id'].unique()))}
 
@@ -1265,12 +1265,8 @@ save_dict = {
 
 
 torch.save(save_dict, "models/{}/{}/checkpoint.pth".format(model_type, timestamp))
-# torch.save(model_waveglow.state_dict(), "models/SINCNET/{}/waveglow.pth".format(timestamp))
-# torch.save(audio_discriminator.state_dict(), "models/SINCNET/{}/audio_discriminator.pth".format(timestamp))
 
 run["model/saved_model/checkpoint"].upload("models/{}/{}/checkpoint.pth".format(model_type, timestamp))
-# run["model/saved_model/waveglow"].upload("models/SINCNET/{}/waveglow.pth".format(timestamp))
-# run["model/saved_model/audio_dis"].upload("models/SINCNET/{}/audio_discriminator.pth".format(timestamp))
 
 
 

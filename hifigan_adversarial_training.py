@@ -34,11 +34,11 @@ from dotenv import load_dotenv
 import neptune
 import pandas as pd # Note: pandas is not needed for this class
 import sys
-sys.path.append("/home/desild/work/academic/sem3/TrustworthyML-assignment/tacotron2")
-print(sys.path)
+# sys.path.append("/home/desild/work/academic/sem3/TrustworthyML-assignment/tacotron2")
+# print(sys.path)
 
 # Load Configs
-load_dotenv("/home/desild/work/academic/sem3/TrustworthyML-assignment/.env")
+load_dotenv()
 
 # %%
 
@@ -915,7 +915,7 @@ class Config:
     
 config = Config()
 
-train_data = pd.read_csv("/home/desild/work/academic/sem3/TrustworthyML-assignment/data/raw/vctk/unseen_data.csv")
+train_data = pd.read_csv("data/vctk_dataset/unseen_data.csv")
 
 # loss function
 cost = nn.NLLLoss()
@@ -1261,7 +1261,7 @@ hifigan_config = dycomutils.config.ConfigDict(hifigan_config)
  
 
 # %%
-hifigan_weight = torch.load('/home/desild/work/academic/sem3/TrustworthyML-assignment/tacotron2/vctk/models/pretrain_hifigan/generator_v1')
+hifigan_weight = torch.load('models/pretrain_hifigan/generator_v1')
 hifigan = HIFIGenerator(hifigan_config)
 hifigan.load_state_dict(hifigan_weight['generator'])
 hifigan.cuda()
@@ -1427,12 +1427,7 @@ save_dict = {
 
 
 torch.save(save_dict, "models/{}/{}/checkpoint.pth".format(model_type, timestamp))
-# torch.save(model_waveglow.state_dict(), "models/SINCNET/{}/waveglow.pth".format(timestamp))
-# torch.save(audio_discriminator.state_dict(), "models/SINCNET/{}/audio_discriminator.pth".format(timestamp))
-
 run["model/saved_model/checkpoint"].upload("models/{}/{}/checkpoint.pth".format(model_type, timestamp))
-# run["model/saved_model/waveglow"].upload("models/SINCNET/{}/waveglow.pth".format(timestamp))
-# run["model/saved_model/audio_dis"].upload("models/SINCNET/{}/audio_discriminator.pth".format(timestamp))
 
 
 
